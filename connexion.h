@@ -10,8 +10,6 @@
 #include <QLineEdit>
 #include "mainwindow.h"
 
-
-
 namespace Ui {
 class connexion;
 }
