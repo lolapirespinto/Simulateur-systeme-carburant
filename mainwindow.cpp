@@ -8,51 +8,17 @@
 #include "windows.h"
 using namespace std;
 
-
-
-
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
-
-    //au lancement les pompes primaire fonctionnent
      ui->setupUi(this);
 
-   /*file= new QFile("leot.txt");
-
-     file->open(QIODevice::WriteOnly | QIODevice::Text);
-
-
-
-     flux->setCodec("UTF-8");
-     flux << "Test de Leo Lamoureux:"<< endl;
-     flux << "flux"<< endl;
-
-
-     QTextEdit *zoneTexte=new QTextEdit;
-     zoneTexte->setGeometry(100,100,400,200);
-     zoneTexte->setReadOnly(true);
-     QString fileName = "leot.txt";
-     QFile fichier(fileName);
-     if(fichier.open( QIODevice::ReadOnly | QIODevice::Text))
-     {
-         fileName = fichier.readAll();
-         fichier.close();
-      }
-          zoneTexte->setText(fileName);
-          zoneTexte->show();
-
-*/
-
-
-
      tank1.pompeP->setEtat(MARCHE);
-      tank2.pompeP->setEtat(MARCHE);
-       tank3.pompeP->setEtat(MARCHE);
-    //initialisation des couleurs
+     tank2.pompeP->setEtat(MARCHE);
+     tank3.pompeP->setEtat(MARCHE);
+     //initialisation des couleurs
      vert.setColor(QPalette::Background,QColor::fromRgb(85, 170, 127));
      rouge.setColor(QPalette::Background,QColor::fromRgb(255, 94, 94));
      noir.setColor(QPalette::Background, Qt::black);
@@ -95,14 +61,6 @@ MainWindow::MainWindow(QWidget *parent)
     m_pb3->setFormat("%v /%m");
 
     m_pb3->move(1093,115);
-   /* m_slider = new QSlider(Qt::Horizontal, this);
-    m_slider->setGeometry(10, 60, 150, 20);
-
-    QObject::connect(m_slider, SIGNAL(valueChanged(int)), m_pb, SLOT(setValue(int)));*/
-
-
-
-
 
      //les vannes
     VT12ouverte = new QWidget(this);
