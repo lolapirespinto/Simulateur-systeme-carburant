@@ -15,17 +15,13 @@
 #include <QByteArray>
 #include <fstream>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
 
     QApplication app(argc, argv);
 
-
-
     connexion c;
     c.show();
-
-
+    
     return app.exec();
 
 }
