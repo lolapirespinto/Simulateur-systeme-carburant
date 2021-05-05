@@ -23,16 +23,12 @@ connexion::connexion(QWidget *parent) :
     champM->move(150,90);
     champM->show();
 
-
 }
 
 connexion::~connexion()
 {
     delete ui;
 }
-
-
-
 
 void connexion::on_pushButton_clicked()
 {
@@ -51,7 +47,6 @@ void connexion::on_pushButton_clicked()
         {
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
-
 
     }
 
