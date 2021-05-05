@@ -1,0 +1,3 @@
+projet réalisé sous qt Creator
+besoin d'etre lancé dans l'ide de QT creator
+ou d'avoir les paquets necéssaires
