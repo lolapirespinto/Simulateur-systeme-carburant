@@ -5,8 +5,7 @@ using namespace std;
 #include <iostream>
 #include <stdlib.h>
 
-Pompe::Pompe()
-{
+Pompe::Pompe(){
     type=pompePrimaire;
     etat=ARRET;
 }
