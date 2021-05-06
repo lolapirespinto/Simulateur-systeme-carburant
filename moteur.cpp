@@ -6,8 +6,7 @@
 using namespace std;
 
 
-Moteur::Moteur()
-{
+Moteur::Moteur(){
     conso=CONSO;
     etat=ARRETM;
 }
