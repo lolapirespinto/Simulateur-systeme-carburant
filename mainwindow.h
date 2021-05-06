@@ -24,19 +24,12 @@ public:
     ~MainWindow();
 
     int demo;
-   /* QFile *file;
-
-    QTextStream *flux=new QTextStream(file);*/
-
-
-
-
-
+    
 ///Widgets
-    //vie des reservoirs
-    QProgressBar *m_pb;
-    QProgressBar *m_pb2;
-    QProgressBar *m_pb3;
+           //vie des reservoirs
+           QProgressBar *m_pb;
+           QProgressBar *m_pb2;
+           QProgressBar *m_pb3;
 
           //Widgets des Vannes
           QWidget *VT12ouverte;
@@ -50,7 +43,6 @@ public:
           QWidget *V23ouverte;
           QWidget *V23fermee;
 
-
           //Widgets des moteurs
           QWidget *M1marche;
           QWidget *M1arret;
@@ -59,11 +51,9 @@ public:
           QWidget *M3marche;
           QWidget *M3arret;
 
-
           //pompes
           QWidget *P11marche;
           QWidget *P11arret;
-
 
          //couleurs
          QPalette noir = palette();
@@ -97,7 +87,6 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
-
 
    // void on_pushButton_3_clicked();
 
