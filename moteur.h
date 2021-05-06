@@ -10,8 +10,7 @@
 #define MARCHEM 60
 #define ARRETM 61
 
-class Moteur
-{
+class Moteur{
 
 protected:
     int conso;
