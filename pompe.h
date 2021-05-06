@@ -11,8 +11,7 @@ using namespace std;
 #define PANNE 22
 #define UTILISEE 20800
 
-class Pompe
-{
+class Pompe{
 protected:
     int type;
     int etat;
