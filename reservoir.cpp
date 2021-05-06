@@ -7,8 +7,7 @@
 using namespace std;
 
 //constructeurs
-Reservoir::Reservoir()
-{
+Reservoir::Reservoir(){
     nom="reservoir anonyme";
     capacite =200;
     etat=PLEIN;
