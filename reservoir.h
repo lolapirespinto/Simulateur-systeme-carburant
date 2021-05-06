@@ -11,8 +11,8 @@ using namespace std;
 #define VIDE 0
 #define ALIMENTE 770
 
-class Reservoir
-{
+class Reservoir{
+    
     friend class Pompe;
     friend class Moteur;
 
@@ -21,8 +21,6 @@ protected:
     int capacite;
     int etat;
     Moteur *m;
-
-
 
 public:
 
