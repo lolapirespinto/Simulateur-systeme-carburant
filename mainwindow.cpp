@@ -179,8 +179,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
 //remplir tank1
 void MainWindow::on_pushButton_clicked()
 {
@@ -199,7 +197,6 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
 
-
     if (VT12.getEtat()==FERME){
         tank1.setEtat(VIDE);
         m_pb->setValue(tank1.getEtat());
@@ -216,10 +213,8 @@ void MainWindow::on_pushButton_2_clicked()
     }
 
 
-
     if(tank1.getEtat()<1){tank1.setEtat(VIDE);}
     if(tank2.getEtat()<1){tank2.setEtat(VIDE);}
-
 
 
     if (tank1.getEtat()==VIDE && V13.getEtat()==FERME && V12.getEtat()==FERME){
@@ -240,25 +235,28 @@ void MainWindow::on_pushButton_2_clicked()
             cout<<"M2 plus alimente, tank2 VIDE"<<endl;
 
     }
-    if (tank1.getEtat()==VIDE && V13.getEtat()==OUVERT && V12.getEtat()==FERME && tank3.getEtat()!=VIDE)
-    {  if (M1.getEtat()==ARRETM){
+    
+    if (tank1.getEtat()==VIDE && V13.getEtat()==OUVERT && V12.getEtat()==FERME && tank3.getEtat()!=VIDE){ 
+        if (M1.getEtat()==ARRETM){
             M1.demarrerM();
             M1marche->show();
             M1arret->hide();
               cout<<"M1 alimente par tank3"<<endl;
         }
     }
-    if (tank1.getEtat()==VIDE && V12.getEtat()==OUVERT && V13.getEtat()==FERME && tank2.getEtat()!=VIDE)
-    {  if (M1.getEtat()==ARRETM){
+    
+    if (tank1.getEtat()==VIDE && V12.getEtat()==OUVERT && V13.getEtat()==FERME && tank2.getEtat()!=VIDE){  
+        if (M1.getEtat()==ARRETM){
             M1.demarrerM();
             M1marche->show();
             M1arret->hide();
             cout<<"M1 alimente par tank2"<<endl;
         }
     }
+    
     if (tank1.getEtat()==VIDE && V13.getEtat()==OUVERT && V12.getEtat()==OUVERT
-            && (tank2.getEtat()!=VIDE || tank3.getEtat()!=VIDE))
-    {  if (M1.getEtat()==ARRETM){
+            && (tank2.getEtat()!=VIDE || tank3.getEtat()!=VIDE)){  
+        if (M1.getEtat()==ARRETM){
             M1.demarrerM();
             M1marche->show();
             M1arret->hide();
@@ -273,7 +271,6 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_4_clicked()
 {
 
-
     if (VT23.getEtat()==FERME){
         tank3.setEtat(VIDE);
         m_pb3->setValue(tank3.getEtat());
@@ -286,8 +283,7 @@ void MainWindow::on_pushButton_4_clicked()
         tank2.setEtat(tank2.getEtat()/2);
         m_pb2->setValue(tank2.getEtat());
           cout<<"Tank 3 : "<<tank3.getEtat()<<", Tank3 alimente par tank2 !"<<endl;
-
-    }
+     }
 
     if(tank3.getEtat()<1){tank3.setEtat(VIDE);}
     if(tank2.getEtat()<1){tank2.setEtat(VIDE);}
@@ -298,6 +294,7 @@ void MainWindow::on_pushButton_4_clicked()
         M3marche->hide();
           cout<<"M3 plus alimente, tank3 VIDE"<<endl;
     }
+    
     if (tank3.getEtat()==VIDE && V13.getEtat()==OUVERT && V23.getEtat()==FERME && tank1.getEtat()!=VIDE)
     {  if (M3.getEtat()==ARRETM){
             M3.demarrerM();
@@ -306,6 +303,7 @@ void MainWindow::on_pushButton_4_clicked()
               cout<<"M3 alimente par tank1"<<endl;
         }
     }
+    
     if (tank3.getEtat()==VIDE && V23.getEtat()==OUVERT && V13.getEtat()==FERME && tank2.getEtat()!=VIDE)
     {  if (M3.getEtat()==ARRETM){
             M3.demarrerM();
@@ -314,6 +312,7 @@ void MainWindow::on_pushButton_4_clicked()
             cout<<"M3 alimente par tank2"<<endl;
         }
     }
+    
     if (tank3.getEtat()==VIDE && V23.getEtat()==OUVERT && V13.getEtat()==OUVERT
             && (tank2.getEtat()!=VIDE || tank1.getEtat()!=VIDE))
     {  if (M3.getEtat()==ARRETM){
@@ -360,15 +359,12 @@ void MainWindow::on_pushButton_5_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "ouverture V23" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -397,20 +393,18 @@ void MainWindow::on_pushButton_6_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "fermeture V23" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
     }
 }
+
 //démarrer P12
 void MainWindow::on_pushButton_7_clicked()
 {
@@ -438,15 +432,12 @@ void MainWindow::on_pushButton_7_clicked()
 }
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "demarrer P12" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -476,20 +467,18 @@ void MainWindow::on_pushButton_8_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "arret P12" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
     }
 }
+
 //demarrer P22
 void MainWindow::on_pushButton_9_clicked()
 {
@@ -505,20 +494,16 @@ void MainWindow::on_pushButton_9_clicked()
     if (demo==ON && tank1.getEtat()==VIDE && tank1.pompeP->getEtat()==PANNE){
 
         cout<<"1 ere etape bonnne"<<endl;
-
-
     }
+    
     if(demo==ON){
-
-
+        
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "demarrer P22" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -546,15 +531,12 @@ void MainWindow::on_pushButton_10_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "arret P22" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -573,20 +555,18 @@ void MainWindow::on_pushButton_11_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "demarrer P32" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
     }
 }
+
 //arreter P32
 void MainWindow::on_pushButton_12_clicked()
 {
@@ -606,21 +586,19 @@ void MainWindow::on_pushButton_12_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "arreter P32" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
     }
 
 }
+
 //DEMARRER TEST
 void MainWindow::on_pushButton_13_clicked()
 {
@@ -630,9 +608,7 @@ void MainWindow::on_pushButton_13_clicked()
         M1marche->hide();
         M1arret->show();
         cout<<"pompe primaire du tank 1 en panne !"<<endl;
-
-
-
+    
 }
 
 
@@ -648,11 +624,14 @@ void MainWindow::on_pushButton_16_clicked()
  else {
      if(tank1.getEtat()!=VIDE){
       M1.demarrerM();
-        if (M1.getEtat()==MARCHEM) {
+        if (M1.getEtat()==MARCHEM){
             M1marche->show();
             M1arret->hide();
-     cout<<"Pompe primaire du tank1 a nouveau en marche"<<endl;
-     cout<<"Redemarrage Moteur 1"<<endl;}}}
+            cout<<"Pompe primaire du tank1 a nouveau en marche"<<endl;
+            cout<<"Redemarrage Moteur 1"<<endl;
+        }
+     }
+ }
 
  if(tank2.pompeP->getEtat()==PANNE || tank2.pompeP->getEtat()==ARRET){cout<<"Pompe Primaire du tank2 en panne !"<<endl;}
  else {
@@ -671,8 +650,11 @@ void MainWindow::on_pushButton_16_clicked()
         if (M3.getEtat()==MARCHEM) {
             M3marche->show();
             M3arret->hide();
-     cout<<"Pompe primaire du tank3 a nouveau en marche"<<endl;
-     cout<<"Redemarrage Moteur 3"<<endl;}}}
+            cout<<"Pompe primaire du tank3 a nouveau en marche"<<endl;
+            cout<<"Redemarrage Moteur 3"<<endl;
+        }
+     }
+ }
 
 
 }
@@ -716,15 +698,12 @@ void MainWindow::on_pushButton_17_clicked()
 
         if(demo==ON){
 
-
             ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-            if(monFlux)
-            {
+            if(monFlux){
                 monFlux << "ouvrir V13" << endl;
 
             }
-            else
-            {
+            else{
                 cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
             }
 
@@ -753,9 +732,8 @@ void MainWindow::on_pushButton_21_clicked()
               M1marche->show();
               M1arret->hide();
           }
-
-
     }
+    
     if(tank2.getEtat()==VIDE && tank1.getEtat()!=VIDE){
         tank2.setEtat(tank1.getEtat()/2);
         tank1.setEtat(tank1.getEtat()/2);
@@ -789,28 +767,24 @@ void MainWindow::on_pushButton_21_clicked()
                     M3arret->hide();
                 }
           }
-
-
     }
+    
     if(demo==ON){
         cout<<"coucou"<<endl;
 
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "ouverture VT12" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
 
         }
-
-
 }
+
 //bouton fermer VT12
 void MainWindow::on_pushButton_22_clicked()
 {
@@ -829,39 +803,41 @@ void MainWindow::on_pushButton_22_clicked()
        M1arret->show();
        M1marche->hide();
     }
+    
     if(tank1.getEtat()==VIDE && V12.getEtat()==OUVERT && tank2.getEtat()==VIDE && V13.getEtat()==FERME){
        M1.arreterM();
        M1arret->show();
        M1marche->hide();
     }
+    
     if(tank1.getEtat()==VIDE && V12.getEtat()==OUVERT && tank2.getEtat()!=VIDE && V13.getEtat()==FERME){
        if(M1.getEtat()==ARRETM){
            M1.demarrerM();
            M1arret->hide();
            M1marche->show();}
     }
+    
     if(tank1.getEtat()==VIDE && V12.getEtat()==FERME && V13.getEtat()==OUVERT && tank3.getEtat()==VIDE){
        M1.arreterM();
        M1arret->show();
        M1marche->hide();
     }
+    
     if(tank1.getEtat()==VIDE && V12.getEtat()==FERME && V13.getEtat()==OUVERT && tank3.getEtat()!=VIDE){
         if(M1.getEtat()==ARRETM){
             M1.demarrerM();
             M1arret->hide();
             M1marche->show();}
     }
+    
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "fermeture VT12" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -916,9 +892,8 @@ if (tank1.getEtat()==VIDE && VT12.getEtat()==OUVERT){
               M3marche->show();
               M3arret->hide();
           }
-
-
     }
+    
     if(tank2.getEtat()==VIDE
        && tank3.getEtat()==VIDE
        && V13.getEtat()==FERME
@@ -955,21 +930,17 @@ if (tank1.getEtat()==VIDE && VT12.getEtat()==OUVERT){
 }
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "ouvrir VT23" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
-
     }
-
 }
+
 //fermer VT23
 void MainWindow::on_pushButton_24_clicked()
 {
@@ -982,19 +953,17 @@ void MainWindow::on_pushButton_24_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "fermeture VT23" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
     }
 }
+
 //ouvrir vanne V12
 void MainWindow::on_pushButton_19_clicked()
 {
@@ -1041,104 +1010,34 @@ if (tank1.getEtat()==VIDE || (tank1.pompeP->getEtat()==PANNE && tank1.pompeS->ge
         {
             monFlux << "ouvrir V12 \n" << endl;
             string ligne;
-int cmp=0;
-                 while(getline(fichier, ligne))
-                 {
+            int cmp=0;
+            
+                 while(getline(fichier, ligne)){
 
                     if ((ligne=="test de Léo :") || (ligne=="test de Lola :")){
                         cmp=0;
                     }
                     cmp++;
-
                  }
-if (cmp==6){monFlux << "Tout bon : 10/10\n" << endl;}
-if (cmp==7){monFlux << "9/10 \n" << endl;}
-if (cmp==8){monFlux << "8/10 \n" << endl;}
-if (cmp==9){monFlux << "7/10 \n" << endl;}
-if (cmp<6 || cmp>9){monFlux << "5/10, peu mieux faire \n" << endl;
-
-
-}
+            
+            if (cmp==6){monFlux << "Tout bon : 10/10\n" << endl;}
+            if (cmp==7){monFlux << "9/10 \n" << endl;}
+            if (cmp==8){monFlux << "8/10 \n" << endl;}
+            if (cmp==9){monFlux << "7/10 \n" << endl;}
+            if (cmp<6 || cmp>9){monFlux << "5/10, peu mieux faire \n" << endl;
 
         }
-        else
-        {
+
+       }
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
 
 
     }
-    /*
-//cas V12 et V13 ouvert
-    if (tank1.getEtat()==VIDE || (tank1.pompeP->getEtat()==ARRET && tank1.pompeS->getEtat()==ARRET)){
-
-        if (V13.getEtat()==OUVERT && V23.getEtat()==FERME
-    && (tank3.getEtat()!=VIDE && M3.getEtat()==MARCHEM
-    && (tank3.pompeP->getEtat()==MARCHE && tank3.pompeS->getEtat()==MARCHE))){
-            if (M1.getEtat()==ARRETM){
-                M1.demarrerM();
-                M1marche->show();
-                M1arret->hide();
-            }
-        }
-
-        if (V13.getEtat()==OUVERT
-     && (tank3.getEtat()!=VIDE && M3.getEtat()==ARRETM
-     && (tank3.pompeP->getEtat()==MARCHE || tank3.pompeS->getEtat()==MARCHE))){
-            if (M1.getEtat()==ARRETM){
-                M1.demarrerM();
-                M1marche->show();
-                M1arret->hide();
-            }
-        }
-
-    }
-    if (tank3.getEtat()==VIDE || (tank3.pompeP->getEtat()==ARRET && tank3.pompeS->getEtat()==ARRET)){
-
-        if (V13.getEtat()==OUVERT && V23.getEtat()==FERME
-    && (tank1.getEtat()!=VIDE && (M1.getEtat()==ARRETM || (M2.getEtat()==ARRETM ))
-    && (tank1.pompeP->getEtat()==MARCHE && tank1.pompeS->getEtat()==MARCHE))){
-            if (M3.getEtat()==ARRETM){
-                M3.demarrerM();
-                M3marche->show();
-                M3arret->hide();
-            }
-        }
-
-
-
-    }
-
-// cas V12 et V23 ouvert
-    if (tank1.getEtat()==VIDE || (tank1.pompeP->getEtat()==ARRET && tank1.pompeS->getEtat()==ARRET)){
-
-        if (V23.getEtat()==OUVERT && V13.getEtat()==FERME
-    && (tank3.getEtat()!=VIDE && M3.getEtat()==MARCHEM
-    && (tank3.pompeP->getEtat()==MARCHE && tank3.pompeS->getEtat()==MARCHE))){
-            if (M1.getEtat()==ARRETM){
-                M1.demarrerM();
-                M1marche->show();
-                M1arret->hide();
-            }
-        }
-
-        if (V23.getEtat()==OUVERT
-     && (tank3.getEtat()!=VIDE && M3.getEtat()==ARRETM
-     && (tank3.pompeP->getEtat()==MARCHE || tank3.pompeS->getEtat()==MARCHE))){
-            if (M1.getEtat()==ARRETM){
-                M1.demarrerM();
-                M1marche->show();
-                M1arret->hide();
-            }
-        }
-
-    }
-
-*/
-
-
 }
+
 //fermer Vanne V12
 void MainWindow::on_pushButton_20_clicked()
 {
@@ -1163,21 +1062,19 @@ void MainWindow::on_pushButton_20_clicked()
 
     if(demo==ON){
 
-
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "fermeture V12" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
     }
 
 }
+
 //fermer V13
 void MainWindow::on_pushButton_18_clicked()
 {
@@ -1204,13 +1101,11 @@ void MainWindow::on_pushButton_18_clicked()
 
 
         ofstream monFlux("C:\\Users\\leosa\\OneDrive\\Bureau\\PROJETAVION\\test.txt",ios::app);
-        if(monFlux)
-        {
+        if(monFlux){
             monFlux << "fermeture V13" << endl;
 
         }
-        else
-        {
+        else{
             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
         }
 
@@ -1276,6 +1171,7 @@ void MainWindow::on_pushButton_3_clicked()
               cout<<"M2 alimente par tank1"<<endl;
         }
     }
+    
     if (tank2.getEtat()==VIDE && V23.getEtat()==OUVERT && V12.getEtat()==FERME && tank3.getEtat()!=VIDE)
     {  if (M2.getEtat()==ARRETM){
             M2.demarrerM();
@@ -1296,6 +1192,7 @@ void MainWindow::on_pushButton_3_clicked()
     }
 
 }
+
 //bouton panne P11
 void MainWindow::on_pushButton_15_clicked()
 {
@@ -1311,7 +1208,6 @@ void MainWindow::on_pushButton_15_clicked()
 
 }
 
-
 void MainWindow::on_pushButton_25_clicked()
 {
     tank2.pompeP->panneP();
@@ -1324,8 +1220,7 @@ void MainWindow::on_pushButton_25_clicked()
     }
 }
 
-void MainWindow::on_pushButton_26_clicked()
-{
+void MainWindow::on_pushButton_26_clicked(){
     tank3.pompeP->panneP();
     if(tank3.pompeP->getEtat()==22){cout<<"Pompe Primaire du tank1 en panne !"<<endl;}
     if(tank3.pompeS->getEtat()==21 &&  V13.getEtat()==31 && VT23.getEtat()==31)
